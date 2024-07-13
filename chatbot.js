@@ -1,11 +1,17 @@
+const responses = {
+    hello: "Hello! How can I assist you today?",
+    bye: "Goodbye! Have a great day!",
+    default: "I'm not sure how to respond to that. Try asking something else!"
+};
+
 function chatBotResponse(message) {
-    // Simple response logic for the chatbot
-    if (message.toLowerCase().includes('hello')) {
-        return 'Hello! How can I assist you today?';
-    } else if (message.toLowerCase().includes('bye')) {
-        return 'Goodbye! Have a great day!';
+    const lowerCaseMessage = message.toLowerCase();
+    if (lowerCaseMessage.includes('hello')) {
+        return responses.hello;
+    } else if (lowerCaseMessage.includes('bye')) {
+        return responses.bye;
     } else {
-        return 'I am a simple bot. Try saying "hello" or "bye".';
+        return responses.default;
     }
 }
 
